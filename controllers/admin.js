@@ -8,6 +8,7 @@ exports.getAddProduct = (req, res, next) => {
   });
 };
 
+//comment
 exports.postAddProduct = (req, res, next) => {
   const title = req.body.title;
   const imageUrl = req.body.imageUrl;
