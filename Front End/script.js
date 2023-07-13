@@ -1,87 +1,3 @@
-// const bookingForm = document.getElementById('bookingForm');
-// const usersContainer = document.getElementById('usersContainer');
-
-// // Function to create a new user
-// const createUser = async (event) => {
-//   event.preventDefault();
-
-//   const name = document.getElementById('name').value;
-//   const email = document.getElementById('email').value;
-//   const phone = document.getElementById('phone').value;
-
-//   try {
-//     const response = await axios.post('http://localhost:3000/api/users', { name, email, phone });
-//     const newUser = response.data;
-//     console.log("response.data=");
-//     displayUser(newUser,newUser.id);
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-//   bookingForm.reset();
-// };
-
-// // Function to display a user
-// const displayUser = (user, id) => {
-//   const userLi = document.createElement('li');
-//   userLi.innerHTML = `${user.name}:${user.email}:${user.phone}
-//     <button onclick="editUser(${id})">Edit</button>
-//     <button onclick="deleteUser(${id})">Delete</button>
-//   `;
-//   userLi.setAttribute('data-id',`${id}`);
-//   usersContainer.appendChild(userLi);
-// };
-
-// // Function to delete a user
-// const deleteUser = async (userId) => {
-//   try {
-//     console.log("userId=",userId);
-//     await axios.delete(`http://localhost:3000/api/users/${userId}`);
-//     const userLi = document.getElementById(`user-${userId}`);
-//     console.log("userLi=", userLi);
-//     userLi.remove();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-
-
-// // Function to edit a user
-// const editUser = async (userId) => {
-//   // Retrieve the user details from the server
-//   try {
-//     const response = await axios.get(`http://localhost:3000/api/users/${userId}`);
-//     const user = response.data;
-//     // Display the user details in edit fields
-//     document.getElementById('name').value = user.name;
-//     document.getElementById('email').value = user.email;
-//     document.getElementById('phone').value = user.phone;
-//     // Delete the user after editing
-//     await axios.delete(`http://localhost:3000/api/users/${userId}`);
-//     const userLi = document.getElementById(`user-${userId}`);
-//     userLi.remove();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// // Fetch existing users on page load
-// const fetchUsers = async () => {
-//   try {
-//     const response = await axios.get('http://localhost:3000/api/users');
-//     const users = response.data;
-//     users.forEach((user) => displayUser(user, user.id));
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// bookingForm.addEventListener('submit', createUser);
-// fetchUsers();
-
-
-
 var form = document.getElementById("bookingForm");
 var ul = document.getElementById("ullist");
 
@@ -170,7 +86,9 @@ ul.addEventListener('click', removeitem = function (e) {
     var id = li.getAttribute('data-id');
     console.log("id=", id);
 
-
+    document.getElementById("name").value='';
+    document.getElementById("email").value='';
+    document.getElementById("phone").value='';
 
     async function deleteData() {
       try {

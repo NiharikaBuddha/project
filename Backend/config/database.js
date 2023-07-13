@@ -8,7 +8,7 @@
 // module.exports=sequelize;
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('task18', 'root', 'Vijay#2000', {
+const sequelize = new Sequelize('task-19', 'root', 'Vijay#2000', {
   host: 'localhost',
   dialect: 'mysql',
 });

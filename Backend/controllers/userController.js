@@ -17,7 +17,7 @@ exports.createUser = async (req, res) => {
   const phone=req.body.phone;
 
   try {
-    const newUser = await User.create({ name:name, email:email, phone:phone });
+    const newUser = await User.create({ expense_amount:name, description:email, category:phone });
     res.json(newUser);
   } catch (error) {
     console.log("errooorr");

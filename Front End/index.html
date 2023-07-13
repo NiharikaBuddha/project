@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Booking App</title>
+  <title>Expense App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Booking App</h1>
+  <h1>Expense App</h1>
 
   <form id="bookingForm">
-    <input type="text" id="name" placeholder="Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="tel" id="phone" placeholder="Phone" required>
+    <input type="number" id="name" placeholder="Choose Expense Amount" required>
+    <input type="text" id="email" placeholder="Description" required>
+    <select name="category" id="phone">
+        <option value="Rent">Rent</option>
+        <option value="Movies">Movies</option>
+        <option value="Food">Food</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+    </select>
     <button type="submit">Submit</button>
   </form>
 
   <!-- <div id="usersContainer"></div> -->
-  <ul id="ullist"></ul>
+  
+    <ul id="ullist"></ul>
+  
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
