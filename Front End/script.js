@@ -4,14 +4,14 @@ var ul = document.getElementById("ullist");
 
 form.addEventListener("submit", adding = function (e) {
   e.preventDefault();
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var phone=document.getElementById("phone").value;
+  var expense= document.getElementById("expense").value;
+  var description = document.getElementById("description").value;
+  var category=document.getElementById("category").value;
 
   let obj = {
-    name: name,
-    email: email,
-    phone:phone
+    expense_amount: expense,
+    description: description,
+    category:category
   };
 
   //console.log(obj)
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await axios.get(
       "http://localhost:3000/api/users"
     );
-
+      console.log("getting all users=",response.data);
     for (let i = 0; i < response.data.length; i++) {
       showOutput(response.data[i], response.data[i].id);
     }
@@ -55,7 +55,7 @@ function showOutput(obj, obj_id) {
 
   var list = document.createElement("li");
 
-  list.appendChild(document.createTextNode(obj.name + " - " + obj.email + "-" +obj.phone+ " "));
+  list.appendChild(document.createTextNode(obj.expense_amount+ " - " + obj.description + "-" +obj.category+ " "));
 
   var deletebtn = document.createElement("button");
   deletebtn.className = "delete";
@@ -86,9 +86,9 @@ ul.addEventListener('click', removeitem = function (e) {
     var id = li.getAttribute('data-id');
     console.log("id=", id);
 
-    document.getElementById("name").value='';
-    document.getElementById("email").value='';
-    document.getElementById("phone").value='';
+    document.getElementById("expense").value='';
+    document.getElementById("description").value='';
+    document.getElementById("category").value='';
 
     async function deleteData() {
       try {
@@ -117,9 +117,9 @@ ul.addEventListener('click', removeitem = function (e) {
     var id = li.getAttribute('data-id');
     console.log("id=", id);
 
-    document.getElementById("name").value=arr[0];
-    document.getElementById("email").value=arr[1];
-    document.getElementById("phone").value=arr[2];
+    document.getElementById("expense").value=arr[0];
+    document.getElementById("description").value=arr[1];
+    document.getElementById("category").value=arr[2];
 
     async function editData() {
       try {
